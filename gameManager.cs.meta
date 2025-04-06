@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ae07f979873e745489d085024c76c174
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerPrefab: {instanceID: 0}
+  - enemyOnePrefab: {instanceID: 0}
+  - cloudPrefab: {instanceID: 0}
+  - Player: {instanceID: 0}
+  - livesText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
