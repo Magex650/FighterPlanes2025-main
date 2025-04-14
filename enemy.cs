@@ -6,6 +6,7 @@ public class enemy : MonoBehaviour
 {
     public GameObject explosionPrefab;
     private gamemanager gameManager;
+    public bool canBeShot = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +23,18 @@ public class enemy : MonoBehaviour
         if(whatDidIHit.tag == "Player")
         {
             whatDidIHit.GetComponent<player>().LoseLife();
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+           if(canBeShot == true){
+               Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+           }
             Destroy(this.gameObject);
         } else if(whatDidIHit.tag == "weapon")
         {
-            Destroy(whatDidIHit.gameObject);
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            gameManager.AddScore(5);
-            Destroy(this.gameObject);
+            if(canBeShot == true){
+             Destroy(whatDidIHit.gameObject);
+             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+             gameManager.AddScore(5);
+             Destroy(this.gameObject);
+            }    
         }
     }
 }

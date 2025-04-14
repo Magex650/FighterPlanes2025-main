@@ -18,10 +18,10 @@ public class glider : MonoBehaviour
     void Update()
     {
         if(goingUp == true){
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
+            transform.Translate(Vector3.up * speed * Time.deltaTime * gameManager.cloudSpeed);
         }
         else if(goingUp == false){
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.down * speed * Time.deltaTime * gameManager.cloudSpeed);
         }
         if (transform.position.y >= gameManager.verticalScreenSize * 1.25f || transform.position.y <= -gameManager.verticalScreenSize * 1.25f){
             Destroy(this.gameObject);

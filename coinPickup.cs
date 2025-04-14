@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class healthPickup : MonoBehaviour
+public class coinPickup : MonoBehaviour
 {
-    private gamemanager gameManager;
+        private gamemanager gameManager;
     private float healthTimer = 5.0f;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class healthPickup : MonoBehaviour
     {
         if(whatDidIHit.tag == "Player")
         {
-            whatDidIHit.GetComponent<player>().GainLife();
+            gameManager.AddScore(1);
             Destroy(this.gameObject);
         }
     }
